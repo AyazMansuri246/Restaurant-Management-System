@@ -302,8 +302,8 @@ const UserSection = () => {
         </button>
       </div>
         
-      <div className="userLogData" style={{height:"40%"}}>
-        <div className="userTitles" style={{color:"white",height:"14%"}}>
+      <div className="userLogData" style={{height:"35%"}}>
+        <div className="userTitles" style={{color:"white",height:"16%"}}>
           <div className="userTitle" style={{ width: "15%",height:"35px",display:"flex",alignItems:"center" }}>UserName</div>
           <div className="userTitle" style={{ width: "23%",height:"35px",display:"flex",alignItems:"center"  }}>
             Email
@@ -337,8 +337,24 @@ const UserSection = () => {
 
         </div>
 
-        <div className="todaysAllocation">
-          allocation
+        <div className="todaysAllocation" style={{margin:"50px 0px",color:"whitesmoke",height:"38%"}}>
+          <div className="title">
+            Todays Allocation
+          </div>
+          <div className="userTitles">
+            <div className="userTitle">Waiter</div>
+            <div className="userTitle"  style={{width:"30%"}}>Table</div>
+          </div>
+          <div className="viewAllocation">
+            <div className="user">
+              <div className="userDetail">wiater 1</div>
+              <div className="userDetail" style={{width:"30%"}}>table1</div>
+            </div>
+            <div className="user">
+              <div className="userDetail">wiater 1</div>
+              <div className="userDetail">table1</div>
+            </div>
+          </div>
         </div>
 
 
