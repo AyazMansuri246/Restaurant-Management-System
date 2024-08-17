@@ -1,0 +1,48 @@
+
+
+.addUser{
+    display: flex;
+}
+
+.userField{
+    background-color: #1F1D2B;
+}
+
+.selectTables{
+    position: absolute;
+    left: 75%;
+}
+.userSubmitBtn{
+    /* margin-left:250px ; */
+    position: absolute;
+    left: 89%;
+    margin: 2px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 4px;
+    color: white;
+}
+.userTitles{
+    display: flex;
+    margin-top: 40px;
+    padding: 2px 48px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.userTitle{
+    padding:0 10px;
+    /* border:1px solid black; */
+    width:20%
+}
+.user{
+    display: flex;
+    padding: 10px 48px;
+    width: 100%;    
+}
+
+.userDetail{
+    padding:0 10px;
+    border:1px solid black;
+    width:20%
+}
