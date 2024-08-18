@@ -86,13 +86,18 @@ const AttendanceSchema = mongoose.Schema({
     }
 },{timestamps:true})
 
-
+const tableAllocation = mongoose.Schema({
+    date:String,
+    waiter:String,
+    tables:Array
+})
 
 const Employee = mongoose.model("Employee", employeeSchema);
 const Table = mongoose.model("Table",TableSchema);
 const Menu = mongoose.model("Menu",MenuSchema);
 const User = mongoose.model("User",UserSchema);
 const Attendance = mongoose.model("Attendance",AttendanceSchema);
+const TableAllocation = mongoose.model("TableAllocation",tableAllocation);
 
 
-module.exports = {Employee,Table,Menu,User,Attendance};
+module.exports = {Employee,Table,Menu,User,Attendance,TableAllocation};

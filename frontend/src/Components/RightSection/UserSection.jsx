@@ -6,6 +6,8 @@ const UserSection = () => {
   const [showOption, setOption] = useState(false);
   const [userData,setUserData] = useState([]);
   const [table,setTable] = useState([]);
+  const [UserAllocation,setUserAllocation] = useState([]);
+  const [showAllocation,setShowAllocation] = useState(false);
   // const [render,setRender] = useState(0);
 
   const [user, setUser] = useState({
@@ -78,7 +80,7 @@ const UserSection = () => {
     try {
       const users = await axios.get("/home/user");
       const tableData = await axios.get("/home/table");
-      console.log(tableData.data);
+      // console.log(tableData.data);
       setTable(tableData.data);
       if (Array.isArray(users.data)) {
         // console.log(users.data);
@@ -91,8 +93,28 @@ const UserSection = () => {
     }
   }
 
+
+  async function getAllocation(){
+    try{
+      const data = await axios.get("/home/user/allocation");
+      console.log("the allocation is ",data);
+      if(data.data == "Not Allocated"){
+        setShowAllocation(false);
+      }else{
+        setUserAllocation(data.data);
+        setShowAllocation(true);
+      }
+    }catch(e){
+      console.log("error on fetching allocated user frontend side ",e);
+    }
+  }
+
+
+
+
   useEffect(() => {
     getUsers();
+    getAllocation();
   }, []);
 
   return (
@@ -337,27 +359,31 @@ const UserSection = () => {
 
         </div>
 
-        <div className="todaysAllocation" style={{margin:"50px 0px",color:"whitesmoke",height:"38%"}}>
-          <div className="title">
+        <div className="todaysAllocation" style={{margin:"50px 0px",color:"whitesmoke",height:"38%",backgroundColor: "#1F1D2B"}}>
+          <div className="title" style={{backgroundColor: "#1F1D2B" ,fontSize:"1.3rem"}}>
             Todays Allocation
           </div>
-          <div className="userTitles">
-            <div className="userTitle">Waiter</div>
-            <div className="userTitle"  style={{width:"30%"}}>Table</div>
+          <div className="userTitles" style={{backgroundColor: "#1F1D2B",height:"16%"}} >
+            <div className="userTitle" style={{display:"flex",alignItems:"center"  }}>Waiter</div>
+            <div className="userTitle"  style={{width:"40%",display:"flex",alignItems:"center" }}>Table</div>
           </div>
-          <div className="viewAllocation">
-            <div className="user">
-              <div className="userDetail">wiater 1</div>
-              <div className="userDetail" style={{width:"30%"}}>table1</div>
-            </div>
-            <div className="user">
-              <div className="userDetail">wiater 1</div>
-              <div className="userDetail">table1</div>
-            </div>
+          {showAllocation ? (
+          <div className="viewAllocation" style={{margin:"20px 0"}}>
+            {UserAllocation.map((user)=>{
+              return(
+                <>
+                  <div className="user" style={{backgroundColor: "#1F1D2B",height:"16%",padding:"5px 48px"}}>
+                    <div className="userDetail" style={{display:"flex",alignItems:"center",height:"35px",borderRadius:"6px"  }}>{user.waiter}</div>
+                    <div className="userDetail" style={{width:"40%",display:"flex",alignItems:"center",borderRadius:"6px" }}>{user.tables.map((table)=><span>{table},</span>)}</div>
+                  </div>
+                </>
+              )
+            })}
+            
           </div>
+
+          ): (<div style={{height:"100px",display:"flex",justifyContent:"center",alignItems:"center",width:"60%",backgroundColor: "#1F1D2B",padding: "10px 48px"}}> Attendance not done Yet</div>)}
         </div>
-
-
       </div>
   );
 };
