@@ -8,18 +8,23 @@
     background-color: #1F1D2B;
 }
 
+.userField input{
+    background-color: #413E3E
+}
+
 .selectTables{
     position: absolute;
     left: 75%;
+    background-color: #413E3E
 }
 .userSubmitBtn{
     /* margin-left:250px ; */
     position: absolute;
     left: 89%;
-    margin: 2px;
-    height: 30px;
+    height: 35px;
+    width: 80px;
     border: 1px solid black;
-    background-color: transparent;
+    background-color: #413E3E;
     border-radius: 4px;
     color: white;
 }
@@ -45,4 +50,9 @@
     padding:0 10px;
     border:1px solid black;
     width:20%;
+    background-color: #413E3E;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
 }

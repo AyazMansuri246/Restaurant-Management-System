@@ -87,7 +87,7 @@ const Attendance = () => {
   return (
     <div style={{height:"80vh",color:"white"}}>
         <div className="heading" style={{ padding: "10px", fontSize: "1.3rem",backgroundColor: "#1F1D2B" }}>Attendance</div>
-        <div className="allRows" style={{padding:"20px 0",height:"50%",border:"1px solid black",overflowY:"scroll",backgroundColor: "#1F1D2B" }}>
+        <div className="allRows" style={{padding:"20px 0",height:"50%",border:"0px solid black",overflowY:"scroll"}}>
 
         {
         !attendanceDone ? (
@@ -96,7 +96,7 @@ const Attendance = () => {
         (    waiter.map((oneWaiter)=>{
                 return(
                     <>
-                        <div className="waiterRow" style={{padding:"10 30px",height:"40px",margin:"15px 0",borderRadius:"5px"}}>
+                        <div className="waiterRow" style={{padding:"10 30px",height:"40px",margin:"15px 0",borderRadius:"5px",backgroundColor: "#413E3E"}}>
                             <div className="waiterName" style={{width:"50%"}}>{oneWaiter.username}</div>
                             <div className="waiterAttendance" >
                                 <button style={{ color:"white"}} className='btn1' name='present' 

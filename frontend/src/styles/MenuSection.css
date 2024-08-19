@@ -1,8 +1,9 @@
-input{
+.addingMenu input{
     width: 250px;
     height: 35px;
     color: white;
     margin: 5px 15px;
+    background-color:#413E3E
 }
 
 .viewMenu{

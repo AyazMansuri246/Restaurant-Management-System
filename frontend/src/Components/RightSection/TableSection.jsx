@@ -97,9 +97,9 @@ const TableSection = () => {
       </div>
       <div className="addTable" >
         <form action="" style={{backgroundColor: "#1F1D2B"}}>
-            <input type="text" style={{margin:"0 20px"}} name="tableName" placeholder='Table Name...' value={table.tableName} onChange={inputHandler} required />
-            <input type="number" style={{margin:"0 20px"}} name="tableSeatingNo" placeholder='Seating Number...' value={table.tableSeatingNo} onChange={inputHandler} required/>
-            <button onClick={addTable} style={{margin:"0 20px",color:"white"}}>Add Table</button>
+            <input type="text" style={{margin:"0 20px",backgroundColor:" #413E3E"}} name="tableName" placeholder='Table Name...' value={table.tableName} onChange={inputHandler} required />
+            <input type="number" style={{margin:"0 20px",backgroundColor:" #413E3E"}} name="tableSeatingNo" placeholder='Seating Number...' value={table.tableSeatingNo} onChange={inputHandler} required/>
+            <button onClick={addTable} style={{margin:"0 20px",color:"white",backgroundColor:" #413E3E"}}>Add Table</button>
         </form>
       </div>
     </div>

@@ -66,7 +66,7 @@ const ViewMenu = (props) => {
                         </div>
                       </div>
                       <div className="delItem">
-                        <button style={{color:"white",width:"80px",border:"unset",border:"1px solid #413E3E",borderRadius:"5px"}} onClick={()=>{delItem(oneItem.mainCategory,oneItem.subCategory)}}>Delete</button>
+                        <button style={{color:"white",width:"80px",border:"unset",border:"1px solid #413E3E",borderRadius:"5px",backgroundColor:" #413E3E"}} onClick={()=>{delItem(oneItem.mainCategory,oneItem.subCategory)}}>Delete</button>
                       </div>
                     </div>
                   </>

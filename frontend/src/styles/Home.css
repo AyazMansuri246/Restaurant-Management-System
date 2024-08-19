@@ -1,6 +1,6 @@
-*{
+/* *{
     background-color: #413E3E;
-}
+} */
 
 .profileSection{
     display: flex;
@@ -15,7 +15,7 @@
     display: flex;
     
     /* border: 2px solid black; */
-    height: 90vh;
+    height: 93vh;
     /* padding: 10px 0; */
     /* background-color: #1F1D2B; */
 }

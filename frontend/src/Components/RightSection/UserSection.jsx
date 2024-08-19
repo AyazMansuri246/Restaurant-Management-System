@@ -130,10 +130,11 @@ const UserSection = () => {
             name="username"
             onChange={inputHandler}
             style={{
-              height: "30px",
+              height: "35px",
               width:"200px",
               borderRadius: "4px",
               border: "1px solid black",
+              margin:"0 10px"
             }}
           />
         </div>
@@ -144,10 +145,11 @@ const UserSection = () => {
             name="email"
             onChange={inputHandler}
             style={{
-              height: "30px",
+              height: "35px",
               width:"250px",
               borderRadius: "4px",
               border: "1px solid black",
+              margin:"0 10px"
             }}
           />
         </div>
@@ -158,10 +160,11 @@ const UserSection = () => {
             name="password"
             onChange={inputHandler}
             style={{
-              height: "30px",
+              height: "35px",
               width:"200px",
               borderRadius: "4px",
               border: "1px solid black",
+              margin:"0 10px"
             }}
           />
         </div>
@@ -170,7 +173,7 @@ const UserSection = () => {
             name="role"
             id=""
             onChange={inputHandler}
-            style={{ height: "30px", borderRadius: "4px",margin:"5px 0",color:"white"}}
+            style={{ height: "35px", borderRadius: "4px",margin:"0 10px",color:"white",backgroundColor:" #413E3E",width:"100px"}}
           >
             <option value="Role">Role</option>
             <option value="admin">Admin</option>
@@ -179,32 +182,33 @@ const UserSection = () => {
           </select>
         </div>
 
-        <div className="userField selectTables" style={{margin:"5px 0"}}>
+        <div className="userField selectTables" style={{height:"35px"}}>
           <div
             name="tables"
             id=""
             style={{
               width: "200px",
-              border: "1px solid black",
-              height: "30px",
+              height:"35px",
               display: "flex",
               justifyContent: "space-between",
+              alignItems:"center",
               fontSize: "1.12rem",
               color:"white"
               
+            }}
+            onClick={() => {
+              if (showOption == true) {
+                setOption(false);
+              } else {
+                setOption(true);
+              }
             }}
           >
             {/* <option value="sv">select value</option> */}
             select Table
             <button
-              onClick={() => {
-                if (showOption == true) {
-                  setOption(false);
-                } else {
-                  setOption(true);
-                }
-              }}
-              style={{ all: "unset", backgroundColor: "#eeeeee",color:"black" }}
+              
+              style={{ all: "unset",backgroundColor:" #413E3E",color:"white",margin:"0 5px",fontSize:".8rem" }}
             >
               &#x25BC;
             </button>
@@ -217,12 +221,12 @@ const UserSection = () => {
                   className="option"
                   style={{
                     border: "1px solid black",
-                    width: "185px",
+                    width: "200px",
                     display: "flex",
                     justifyContent: "space-between",
                     padding: "2px 10px",
                     borderRadius: "3px",
-                    // backgroundColor: "white",
+                    backgroundColor: "#413E3E",
                     color:"white"
                   }}
                 >
@@ -245,7 +249,7 @@ const UserSection = () => {
                     className="option"
                     style={{
                       border: "1px solid black",
-                      width: "185px",
+                      width: "200px",
                       display: "flex",
                       justifyContent: "space-between",
                       padding: "2px 10px",
@@ -335,11 +339,11 @@ const UserSection = () => {
           <div className="userTitle" style={{height:"35px" ,display:"flex",alignItems:"center" }}>Tables</div>
         </div>
 
-        <div className="viewUser" style={{overflowY:"scroll",borderBottom:"1px solid #413E3E",height:"95%",backgroundColor: "#1F1D2B",paddingTop:"10px"}} >
+        <div className="viewUser" style={{overflowY:"scroll",borderBottom:"1px solid #413E3E",height:"95%",paddingTop:"10px"}} >
         {userData.map((user) => {
           return (
             <>
-                <div className="user" style={{backgroundColor: "#1F1D2B",color:"white"}}>
+                <div className="user" style={{color:"white"}}>
                   <div className="userDetail" style={{ width: "15%" }}>{user.username}</div>
                   <div className="userDetail" style={{ width: "23%" }}>
                     {user.email}
@@ -348,7 +352,7 @@ const UserSection = () => {
                   <div className="userDetail" style={{ width: "10%" }}>{user.role}</div>
                   <div className="userDetail">{user.tables.map((table)=><span>{table},</span>)}</div>
                 <div className="action" style={{ margin:"0 25px"}}>
-                  <button style={{height: "30px",border: "1px solid black",backgroundColor:"transparent",borderRadius: "4px",color:"white" }} onClick={()=>{deleteUser(user.username,user.email)}}>delete</button>
+                  <button style={{height: "35px",border: "1px solid black",backgroundColor:" #413E3E",borderRadius: "4px",color:"white" }} onClick={()=>{deleteUser(user.username,user.email)}}>delete</button>
                 </div>
                 </div>
             </>

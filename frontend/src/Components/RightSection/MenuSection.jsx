@@ -110,7 +110,7 @@ const MenuSection = () => {
             <input type="text" placeholder='Sub Category' name='subCategory' value={menuDetails.subCategory} onChange={inputHandler} required/>
             <input type="number" placeholder='Half Qty Price' name="halfPrice" value={menuDetails.halfPrice} onChange={inputHandler} required />
             <input type="number" placeholder='Full Qty Price' name="fullPrice" value={menuDetails.fullPrice} onChange={inputHandler} required />
-            <button>Submit</button>
+            <button style={{backgroundColor: "#413E3E",color:'white',border:"1px solid black",height:"35px",borderRadius:"5px",width:"80px"}}>Submit</button>
           </form>
         </div>
 

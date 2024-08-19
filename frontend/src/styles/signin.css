@@ -1,0 +1,13 @@
+.loginCard{
+    background-color:#1F1D2B ;
+    width: 500px;
+}
+
+.loginBody{
+    background-color:#1F1D2B ;
+}
+ 
+.loginInput{
+    width: 400px;
+    height: 30px;
+}
