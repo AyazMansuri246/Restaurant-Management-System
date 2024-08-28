@@ -1,0 +1,321 @@
+.buttonPrimary{
+    width: 198px;
+    height: 53px;
+    background-color: #4E4A49;
+    color: white;
+    font-size: 23px;
+    border-radius: 9px;
+    border: 0px solid transparent;
+    flex-shrink: 0;
+}
+
+.buttonMenu{
+    all: unset;
+    cursor: pointer;
+    /* background-color:rgb(255, 89, 0); */
+    border: none;
+    color: #75C3E4;
+    font-size: 20px;
+    /* font-weight: 900; */
+    padding: 0.3em 1em;
+    border-radius:0.4rem ;
+}
+.buttonMenu:hover{
+    cursor: pointer;
+}
+
+.MainPage{
+    display: flex;
+    font-family: "Barlow", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    
+}
+
+.tableSection{
+    width: 15%;
+    height: 100vh;
+    padding: 10px 10px;
+    /* border: 1px solid black; */
+    background-color: #1F1D2B;
+    color: white;
+}
+
+.TableQueue{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 48px 0;
+    height: 390px;
+    /* border: 1px solid white; */
+    overflow-y: auto;
+}
+
+.TableQueue::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
+}
+
+.tableAction{
+    background-color: #EA7C69;
+}
+
+
+
+.menuSectionContent{
+    width: 59%;
+    height: 100vh;
+    /* border: 1px solid black; */
+    /* color: whitesmoke; */
+    padding: 10px 10px;
+    background-color: #1F1D2B;
+    color: white;
+}
+
+
+.upperContent{
+
+    display: flex;
+    height: 60px;
+    flex-direction: column;
+    /* margin: 22px 0; */
+    padding: 22px 18px
+}
+
+.searchBar input{
+    color: white;
+    width: 240px;
+    height: 37px;
+    border: 0 solid transparent;
+    /* background-color: azure; */
+    background-color: #2D303E;
+    padding-left: 10px;
+    border-radius: 3px;
+    font-size: medium;
+
+}
+.searchBar{
+    position: absolute;
+    top: 22px;
+    left: 50%;
+}
+
+.navbar{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    position: relative;   
+    /* now it is containing box as position given, having display  we cannot say it is containing box*/
+}
+
+.navbar::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #75C3E4;
+    position: absolute;
+    top: 100%;
+    transform: translate(0,-100%);
+}
+
+.navItems{
+    color: white;
+    padding: 1em;
+    position: relative;
+}
+
+.navItems .active::after{
+    content: "";
+    display: block;
+    width: 90%;
+    height: 3px;
+    background-color: orange;
+    position: absolute;
+    top: 100%;
+    left: 50%;  /*of its parent*/
+    transform: translate(-50%,-100%);   /*translate of its lenght (x,y)*/
+    z-index: 1;
+}
+.navItems a{
+    all: unset;
+    color: white;
+    cursor: pointer;
+    height: 100%;
+}
+.navItems .active{
+    color: orange;
+}
+
+
+.differentMenu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.differentMenu::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
+}
+
+.Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: center;
+    height: 300px;
+    width: 230px;
+    /* border: 1px solid; */
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
+.image{
+    width: 80%;
+    height: auto;  /*check heights of others than take the reamining height*/
+}
+.image img{
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+
+
+
+
+
+.orderSection{
+    width: 26%;
+    height: 100vh;
+    border: 1px solid black;
+    background-color: #1F1D2B;
+    color: white;
+}
+
+.OrderCard{
+    margin-top:10px;
+    padding:20px 4px;
+}
+
+.firstLine{
+    position: relative;
+}
+
+.NameAndPrice{
+    display: inline-block;
+    width: 50%;
+    height: max-content;
+    /* border: 1px solid; */
+    /* display: block; */
+    font-size: 0.9em;
+}
+
+.quantity{
+    display: inline-block;
+    position: absolute;
+    height: 31px;
+    left: 57%;
+    top: 13%;
+}
+/* for removing up down button from input type=number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}  
+
+.totalPrice{
+    display: inline-block;
+    position: absolute;
+    height: 31px;
+    left: 79%;
+    top: 19%;
+    padding: 0 10px ;
+}
+
+.itemNote{
+    width: 80%;
+    display: inline-block;
+}
+
+.itemNote input{
+    background-color: #2D303E;
+    height: 30px;
+    width: 93%;
+    border-radius: 5px;
+    padding: 6px 3px;
+    font-size: medium;
+    margin: 10px 3px;
+    color: white;
+    border: 0;
+
+}
+
+.delOrder{
+    display: inline-block;
+    width: 50px;
+    /* border: 1px solid; */
+    border-radius: 5px;
+    text-align: center;    ;
+    padding: 1px 0px;
+}
+
+.orders{
+    height: 30%;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+
+}
+
+.orders::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
+}
+
+
+.TotalOrders::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
+}

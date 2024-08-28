@@ -58,6 +58,13 @@ const UserSection = () => {
     const res = await axios.post("/home/user", user);
     getUsers();
     alert(res.data);
+    setUser({
+      username: "",
+      email: "",
+      password: "",
+      role: "",
+      tables: [],
+    })
     
   }
 
@@ -128,6 +135,7 @@ const UserSection = () => {
             type="text"
             placeholder="UserName"
             name="username"
+            value={user.username}
             onChange={inputHandler}
             style={{
               height: "35px",
@@ -143,6 +151,7 @@ const UserSection = () => {
             type="email"
             placeholder="Email"
             name="email"
+            value={user.email}
             onChange={inputHandler}
             style={{
               height: "35px",
@@ -158,6 +167,7 @@ const UserSection = () => {
             type="password"
             placeholder="Password"
             name="password"
+            value={user.password}
             onChange={inputHandler}
             style={{
               height: "35px",
@@ -172,6 +182,7 @@ const UserSection = () => {
           <select
             name="role"
             id=""
+            value={user.role}
             onChange={inputHandler}
             style={{ height: "35px", borderRadius: "4px",margin:"0 10px",color:"white",backgroundColor:" #413E3E",width:"100px"}}
           >

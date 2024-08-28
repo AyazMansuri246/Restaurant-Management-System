@@ -9,6 +9,8 @@
     padding: 8px 15px;
     font-size: 1.2rem;
     color: white;
+    background-color: rgb(30, 26, 26);
+    padding-bottom: 20px;
 }
 
 .detailSection{

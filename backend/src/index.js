@@ -7,6 +7,8 @@ const {
   User,
   Attendance,
   TableAllocation,
+  Orders,
+  Log
 } = require("./schema/Schema");
 
 const app = express();
@@ -47,19 +49,26 @@ app.post("/register", async (req, res) => {
 //     }
 // })
 
-app.post("/login", (req, res) => {
-  const { email, password } = req.body;
-  Employee.findOne({ email: email }).then((user) => {
-    if (user) {
-      if (user.password === password) {
-        res.json("Success");
-      } else {
-        res.json("The password is incorrect");
+app.post("/login", async(req, res) => {
+  try{
+    const { username, password } = req.body;
+    const user = await User.findOne({ username: username });
+
+    if(user){
+      if(user.password === password){
+        res.send([user.role,user.tables]);
       }
-    } else {
-      res.json("No record existed");
+      else{
+        res.send("Wrong Password")
+      }
     }
-  });
+    else{
+      res.send("No User");
+    }
+
+  }catch(e){
+    console.log(e);
+  }
 });
 
 app.post("/home/table", async (req, res) => {
@@ -235,7 +244,8 @@ app.get("/home/attendance", async (req, res) => {
     let date = new Date().toLocaleDateString("en-GB");
     const waiter = await User.find({ role: "waiter" });
     const attendanceDate = await Attendance.find({ currentDate: date });
-
+    console.log("waiters are ",waiter);
+    console.log("attendance are ",attendanceDate);
     const getLastAllocated = async (table) => {
       const result = await TableAllocation.find({ date: date });
       console.log(result);
@@ -248,13 +258,16 @@ app.get("/home/attendance", async (req, res) => {
       console.log(arr);
       console.log("this min is ", min);
 
-      for (const allocation of result) {
+      for (const allocation of result){
         if (allocation.tables.length === min) {
-          const update = await TableAllocation.updateOne(
-            { waiter: allocation.waiter },
+          console.log(table);
+          const update = await TableAllocation.findOneAndUpdate(
+            { date:date,waiter: allocation.waiter },
             { $set: { tables: [...allocation.tables, ...table] } }
           );
           console.log(update);
+          console.log(allocation);
+          
           break; // This will exit the loop
         }
       }
@@ -301,6 +314,7 @@ app.get("/home/attendance", async (req, res) => {
     const result = await TableAllocation.find({ date: date });
 
     if (attendanceDate.length === waiter.length && result.length === 0) {
+      
       for (const singleWaiter of waiter) {
         cnt++;
         for (const attendee of attendanceDate) {
@@ -368,6 +382,35 @@ app.get("/home/attendance/bool", async (req, res) => {
     console.log("Error ", e);
   }
 });
+
+
+app.post("/waiter/order",async(req,res)=>{
+  try{
+    const data = await new Orders(req.body).save();
+    console.log("orders are ",data);
+    res.send("saved");
+  }catch(e){
+    console.log("error on saving order on backend side ",e);
+  }
+})
+
+
+app.post("/waiter/log",async(req,res)=>{
+  try{  
+    // console.log(req.body);
+    const data = await new Log(req.body).save();
+    console.log(data);
+    res.send("Log Added")
+     
+  }catch(e){
+    console.log("error on svaing log backend side",e);
+  }
+})
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Listening at port ${port}`);

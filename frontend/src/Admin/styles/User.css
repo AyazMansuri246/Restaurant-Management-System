@@ -9,7 +9,8 @@
 }
 
 .userField input{
-    background-color: #413E3E
+    background-color: #413E3E;
+    color: white;
 }
 
 .selectTables{

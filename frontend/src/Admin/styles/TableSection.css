@@ -21,7 +21,7 @@
     background-color: #1F1D2B;
 }
 
-input{
+.addTable input{
     border: unset;
     height: 35px;
     width: 250px;

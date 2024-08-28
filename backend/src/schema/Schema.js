@@ -92,12 +92,55 @@ const tableAllocation = mongoose.Schema({
     tables:Array
 })
 
+const OrderSchema = mongoose.Schema({
+    date:{
+        type:String,
+        required:true
+    },
+    tableName:{
+        type:String,
+        required:true
+    },
+    itemName:{
+        type:String,
+        required:true
+    },
+    itemPrice:{
+        type:Number,
+        required:true
+    },
+    itemQty:{
+        type:Number,
+        required:true
+    },
+    itemNote:{
+        type:String
+    }
+    
+})
+
+
+const logSchema = mongoose.Schema({
+    table:{
+        type:String,
+        required:true
+    },
+    orders:Array,
+    finishTime:{
+        type:String
+    }
+})
+
+
+
 const Employee = mongoose.model("Employee", employeeSchema);
 const Table = mongoose.model("Table",TableSchema);
 const Menu = mongoose.model("Menu",MenuSchema);
 const User = mongoose.model("User",UserSchema);
 const Attendance = mongoose.model("Attendance",AttendanceSchema);
 const TableAllocation = mongoose.model("TableAllocation",tableAllocation);
+const Orders = mongoose.model("Orders",OrderSchema);
+const Log = mongoose.model("Log",logSchema);
 
 
-module.exports = {Employee,Table,Menu,User,Attendance,TableAllocation};
+module.exports = {Employee,Table,Menu,User,Attendance,TableAllocation,Orders,Log};

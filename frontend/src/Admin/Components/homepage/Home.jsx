@@ -8,9 +8,9 @@ const Home = () => {
     <>
       <div className="profileSection">
         <div className="restoName">Restaurant Name</div>
-        <div className="profileName">
+        {/* <div className="profileName">
           <button>Profile</button>
-        </div>
+        </div> */}
       </div>
       <div className="detailSection">
         <div className="leftSection">
