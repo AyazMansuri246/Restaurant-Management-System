@@ -3,7 +3,7 @@ import React from 'react'
 const TableCard = (props) => {
   return (
     <>
-      <div className="tableCard d-flex flex-column px-1 py-2" style={{width:"160px",height:"120px",border:"2px solid #413E3E",color:"white",backgroundColor: "#413E3E" }}>
+      <div className="tableCard d-flex flex-column px-1 py-2" style={{width:"160px",height:"120px",border:"2px solid #413E3E",color:"white",backgroundColor: "#343030" }}>
             <div className="tableName">
                 TableName : {props.name}
             </div>

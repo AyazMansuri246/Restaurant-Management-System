@@ -1,4 +1,6 @@
 .addingMenu input{
+    border: 0;
+    border-radius: 5px;
     width: 250px;
     height: 35px;
     color: white;
@@ -7,8 +9,24 @@
 }
 
 .viewMenu{
-    margin: 30px;
+    /* margin: 30px; */
     color: white;
+    height: 550px;
+    /* border: 2px solid black; */
+    overflow-y: scroll;
+}
+
+.viewMenu::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
 }
 
 .categoryTitleAndOther{

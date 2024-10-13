@@ -6,12 +6,27 @@
     height: 60vh;
     /* border: 1px solid black; */
     overflow-y: scroll;
-    background-color: #1F1D2B;
+    /* background-color: #1F1D2B; */
+}
+
+.viewTable::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
 }
 
 .viewTable .tableCard{
     margin:2px 10px;
     border-radius: 10px;
+    border: 1px solid white;
+    box-shadow:0px 1px 6px -1px;
 }
 
 

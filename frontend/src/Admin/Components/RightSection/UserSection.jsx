@@ -87,6 +87,7 @@ const UserSection = () => {
     try {
       const users = await axios.get("/home/user");
       const tableData = await axios.get("/home/table");
+      console.log("Got users")
       // console.log(tableData.data);
       setTable(tableData.data);
       if (Array.isArray(users.data)) {
@@ -141,7 +142,7 @@ const UserSection = () => {
               height: "35px",
               width:"200px",
               borderRadius: "4px",
-              border: "1px solid black",
+              // border: "1px solid black",
               margin:"0 10px"
             }}
           />
@@ -157,7 +158,7 @@ const UserSection = () => {
               height: "35px",
               width:"250px",
               borderRadius: "4px",
-              border: "1px solid black",
+              // border: "1px solid black",
               margin:"0 10px"
             }}
           />
@@ -173,7 +174,7 @@ const UserSection = () => {
               height: "35px",
               width:"200px",
               borderRadius: "4px",
-              border: "1px solid black",
+              // border: "1px solid black",
               margin:"0 10px"
             }}
           />
@@ -193,7 +194,7 @@ const UserSection = () => {
           </select>
         </div>
 
-        <div className="userField selectTables" style={{height:"35px"}}>
+        <div className="userField selectTables" style={{height:"35px",borderRadius:'4px'}}>
           <div
             name="tables"
             id=""
@@ -205,6 +206,7 @@ const UserSection = () => {
               alignItems:"center",
               fontSize: "1.12rem",
               color:"white"
+              
               
             }}
             onClick={() => {
@@ -350,7 +352,7 @@ const UserSection = () => {
           <div className="userTitle" style={{height:"35px" ,display:"flex",alignItems:"center" }}>Tables</div>
         </div>
 
-        <div className="viewUser" style={{overflowY:"scroll",borderBottom:"1px solid #413E3E",height:"95%",paddingTop:"10px"}} >
+        <div className="viewUser" style={{overflowY:"scroll",borderBottom:"1px solid #413E3E",height:"95%",paddingTop:"10px",width:"98%"}} >
         {userData.map((user) => {
           return (
             <>

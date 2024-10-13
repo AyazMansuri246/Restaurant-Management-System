@@ -1,0 +1,116 @@
+.todaysLogDetails{
+    color:white;
+    border:0px solid white;
+    width:100%;
+    padding:10px 20px;
+}
+
+.revenueBoxes{
+    /* border: 1px solid white;   */
+    border-radius: 10px;
+    padding: 10px 5px;
+    display: flex;
+}
+
+.box{
+    background-color: #343030;
+    border: 1px solid #413E3E;
+    color: white;
+    margin: 0 20px;
+    width: 290px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 6px -1px;
+}
+.revenueImg{
+    margin: 10px 20px;
+    height:70px;
+}
+.revenueImg img{
+    width: 80px;
+    border-radius: 50%;
+}
+
+.value{
+    font-size: 1.2rem;
+    padding: 8px 10px;
+}
+
+.revenueTitle{
+    padding: 20px 10px;
+}
+
+.menuItemsSaleToday{
+    /* width: 80%; */
+    /* border: 1px solid white; */
+    margin: 20px 10px;
+    border-radius: 13px;
+    /* background-color: #343030; */
+    /* overflow-y: scroll; */
+}
+
+.TodaysLogData{
+    height:280px;
+    overflow-y: auto;
+    /* border: 1px solid; */
+    margin-bottom:10px ;
+}
+
+.TodaysLogData::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
+}
+
+.rowTitle{
+    display: flex;
+}
+
+.rTitle{
+    padding: 10px 10px;
+    /* border-right: 1px solid;
+    border-bottom: 1px solid; */
+}
+
+.viewLogData{
+    display: flex;
+    margin-top: 20px;
+    /* background-color: #343030; */
+    height: 50px;
+}
+.singlelogData{
+    padding: 10px 10px;
+    background-color: #343030;
+    margin: 0 5px;
+    border-radius: 8px;
+    height: 45px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.ordersDetails{
+    overflow-x: auto;
+    padding: 5px 20px;
+}
+
+.ordersDetails::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
+}
+

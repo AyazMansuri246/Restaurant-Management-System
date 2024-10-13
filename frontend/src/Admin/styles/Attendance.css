@@ -1,3 +1,17 @@
+.allRows::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
+}
+
+
 .waiterRow{
     display: flex;
     padding: 10px 50px;
@@ -34,9 +48,24 @@
 }
 
 .logData{
-    overflow-y: scroll;
+    overflow: scroll;
     margin: -13px 0px;
     height: 100%;
+    padding: 10px 0;
+}
+
+.logData::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background-color: transparent;   
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
 }
 
 .logTableData{

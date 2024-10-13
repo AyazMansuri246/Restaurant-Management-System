@@ -90,7 +90,7 @@ const MainPage = () => {
     <div className='MainPage'>
       <div className="tableSection">
         <TableQueue currentTable={currentTable} tables={tables}/>
-        <div className="otherSection">
+        {/* <div className="otherSection">
             <div className="status">
                 OrderSection : Pending
             </div>
@@ -99,19 +99,20 @@ const MainPage = () => {
                 <button style={{width:"50px", height:"40px", fontSize:"20px"}}>Yes</button>
                 <button style={{width:"50px", height:"40px", fontSize:"20px"}}>No</button>
             </div>
-        </div>
+        </div> */}
       </div>
       <div className="menuSectionContent">
         <div className="upperContent">
           <div className="name" style={{fontFamily:"sans-serif",fontSize:"1.9rem"}}>Restuarant Manager</div>
           <div className="date" style={{color:"#F8F8F8"}}>{d.toDateString()}</div>
-          <div className="searchBar" >
+          {/* <div className="searchBar" >
             <input type="text" placeholder='Search Item' />
-          </div>
+          </div> */}
         </div>
         
-        <div style={{padding: "20px 0" , display:"inline-block" , width:"80%",fontSize:"1.4rem",fontWeight:"500"}}>Choose Dishes</div>
-
+        {/* <div style={{padding: "20px 0px" , display:"inline-block" , width:"80%",fontSize:"1.4rem",fontWeight:"500"}}>Choose Dishes</div> */}
+        
+        <hr />
         {currTable &&
           <MenuSection setOrders={setOrders} currTable={currTable}/>
         }

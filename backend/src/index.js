@@ -51,12 +51,24 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async(req, res) => {
   try{
+    let date = new Date().toLocaleDateString("en-GB");
     const { username, password } = req.body;
     const user = await User.findOne({ username: username });
 
     if(user){
       if(user.password === password){
-        res.send([user.role,user.tables]);
+        if(user.role==="waiter"){
+          const alloc = await TableAllocation.findOne({ date:date,waiter: username });
+          if(alloc){
+            res.send([user.role,alloc.tables]);
+          }
+          else{
+            res.send(["No Allocation"])
+          }
+        }
+        else{
+          res.send([user.role,user.tables]);
+        }
       }
       else{
         res.send("Wrong Password")
@@ -408,6 +420,58 @@ app.post("/waiter/log",async(req,res)=>{
 })
 
 
+app.get("/home/log" , async(req,res)=>{
+  try{
+    let date = new Date().toLocaleDateString("en-gb");
+    let d = new Date();
+    
+    let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+    let daysArray = [];
+    let orderCnt = [];
+    const data = await Log.find({date:date});
+    console.log(data);
+    daysArray.push(days[d.getDay()]);
+    let sum1 =0 ;
+    let cnt =0 ;
+    data.forEach((order)=>{
+      sum1 += order.total;
+      cnt++;
+    })
+    orderCnt.push(cnt);
+
+    let arr = [sum1];
+    for(let i=0;i<6;i++){
+      d.setDate(d.getDate() - 1);
+      console.log(d.getDay());
+      daysArray.push(days[d.getDay()]);
+      normalDate=d.toLocaleDateString("en-gb")
+      console.log(normalDate);
+      const data1 = await Log.find({date:normalDate});
+      cnt =0;
+      console.log("this is data1" , data1)
+      
+      let sum = 0;
+      data1.forEach((order)=>{
+        sum += order.total;
+        cnt++;
+      })
+      arr.push(sum);
+      orderCnt.push(cnt);
+      console.log("hi")
+      
+    }
+    console.log(daysArray)
+    console.log(orderCnt)
+
+
+
+    res.send([data,arr,daysArray,orderCnt])
+  }
+  catch(e){
+    console.log("Error on fetching log on backend side ",e)
+  }
+})
 
 
 

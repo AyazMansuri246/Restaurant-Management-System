@@ -36,7 +36,7 @@
     width: 15%;
     height: 100vh;
     padding: 10px 10px;
-    /* border: 1px solid black; */
+    border: 1px solid rgb(56, 56, 56);
     background-color: #1F1D2B;
     color: white;
 }
@@ -84,7 +84,7 @@
 .upperContent{
 
     display: flex;
-    height: 60px;
+    /* height: 60px; */
     flex-direction: column;
     /* margin: 22px 0; */
     padding: 22px 18px

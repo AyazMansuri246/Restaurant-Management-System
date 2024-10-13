@@ -85,7 +85,7 @@ const TableSection = () => {
 
   return (
     <div style={{backgroundColor: "#1F1D2B"}}>
-       <div style={{padding:"10px",fontSize:"1.3rem",backgroundColor: "#1F1D2B",color:"white"}}>
+       <div style={{padding:"10px",fontSize:"1.3rem",color:"white"}}>
         Table Management
         </div> 
       <div className="viewTable m-3">
@@ -96,7 +96,7 @@ const TableSection = () => {
         })}
       </div>
       <div className="addTable" >
-        <form action="" style={{backgroundColor: "#1F1D2B"}}>
+        <form action="" >
             <input type="text" style={{margin:"0 20px",backgroundColor:" #413E3E"}} name="tableName" placeholder='Table Name...' value={table.tableName} onChange={inputHandler} required />
             <input type="number" style={{margin:"0 20px",backgroundColor:" #413E3E"}} name="tableSeatingNo" placeholder='Seating Number...' value={table.tableSeatingNo} onChange={inputHandler} required/>
             <button onClick={addTable} style={{margin:"0 20px",color:"white",backgroundColor:" #413E3E"}}>Add Table</button>

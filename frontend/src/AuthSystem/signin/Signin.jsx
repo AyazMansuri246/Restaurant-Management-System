@@ -19,14 +19,17 @@ const Signin = () => {
         if(result.data == "Wrong Password"){
           alert("Wrong Password");
         }
-        if(result.data[0] == "admin"){
+        else if(result.data[0] == "admin"){
           alert("login succesful");
           navigate("/home");
         }
-        if(result.data[0] == "waiter"){
+        else if(result.data[0] == "waiter"){
           alert("login succesful");
 
           navigate("/waiter", {state : {tables:result.data[1]}});
+        }
+        else if(result.data[0] == "No Allocation"){
+          alert("No Allocation Done, this waiter is absent");
         }
       } else {
           alert("Wrong credential");
@@ -63,7 +66,7 @@ const Signin = () => {
         <input
           className="form-control pword loginInput"
           type="password"
-          placeholder="Name"
+          placeholder="Password"
           name="password"
           onChange={(e) => setPassword(e.target.value)}
           />

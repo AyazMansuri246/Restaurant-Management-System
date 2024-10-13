@@ -11,6 +11,7 @@
 .userField input{
     background-color: #413E3E;
     color: white;
+    border: 0;
 }
 
 .selectTables{
@@ -24,7 +25,8 @@
     left: 89%;
     height: 35px;
     width: 80px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border: 0;
     background-color: #413E3E;
     border-radius: 4px;
     color: white;
@@ -56,4 +58,18 @@
     display: flex;
     align-items: center;
     border-radius: 3px;
+}
+
+
+.viewUser::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;  
+}
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    background-color: #2D303E;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4E4A49;
+    border-radius: 15px;
 }

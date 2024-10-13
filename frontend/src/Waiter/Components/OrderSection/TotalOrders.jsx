@@ -52,7 +52,9 @@ const TotalOrders = (props) => {
       }
       // console.log("orders are",singleTableOrders)
       if(singleTableOrders.length!=0){
-        const res = await axios.post("/waiter/log",{table:currTable,orders:singleTableOrders,finishTime:time})
+        const d = new Date();
+        let currentDate = d.toLocaleDateString("en-GB");
+        const res = await axios.post("/waiter/log",{date:currentDate,table:currTable,orders:singleTableOrders,total:total,finishTime:time})
         console.log(res.data);
         if(res.data == "Log Added"){
           for(let order of totalOrders){

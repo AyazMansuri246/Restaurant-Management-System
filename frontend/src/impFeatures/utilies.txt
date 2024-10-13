@@ -1,2 +1,6 @@
 background-color: #413E3E;   grey colour
 background-color: #1F1D2B;   dark blue colour
+background-color: #EA7C69;   orange
+background-color: #343030;   dark grey 
+background: #1e1c1c;     black
+backgroundColor:"#669999"  blue like used in graph

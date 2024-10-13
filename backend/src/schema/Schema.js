@@ -121,11 +121,13 @@ const OrderSchema = mongoose.Schema({
 
 
 const logSchema = mongoose.Schema({
+    date: String,
     table:{
         type:String,
         required:true
     },
     orders:Array,
+    total:Number,
     finishTime:{
         type:String
     }
