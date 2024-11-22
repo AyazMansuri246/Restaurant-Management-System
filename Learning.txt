@@ -1,5 +1,0 @@
-Learning's from the Restaurant Management Project
-
-1. break and continue that is jump statement cant be applied in forEach loop and hence use for of, for loop etc.
-2. The forEach loop does not handle asynchronous code properly because it doesn't wait for the await inside. 
-Instead, use a for...of loop or Promise.all to manage asynchronous operations correctly.
